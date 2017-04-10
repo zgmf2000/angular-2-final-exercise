@@ -1,0 +1,47 @@
+.button-container
+{
+  text-align: right;
+}
+
+button
+{
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.todo-set-done
+{
+  background-color: green;
+  color: white;
+  border: solid black 0.5px;
+
+  transition: all ease 0.1s;
+}
+
+.todo-set-done.is-hovering
+{
+  color: green;
+  background-color: white;
+}
+
+.todo-set-remove
+{
+  background-color: red;
+  color: white;
+  border: solid black 0.5px;
+
+  transition: all ease 0.1s;
+}
+
+.todo-set-remove.is-hovering
+{
+  color: red;
+  background-color: white;
+}
+
+h1
+{
+  font-weight: bold;
+}

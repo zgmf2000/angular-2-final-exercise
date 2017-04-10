@@ -1,0 +1,3 @@
+<section>
+  <td-item class="task-container" [ngClass]="{'item-task':item.type==='Task', 'item-shop':item.type==='Shopping'}" *ngFor="let item of todoList" [TodoItem]="item" (onDone)="setDone($event)" (onRemove)="setRemove($event)"></td-item>
+</section>

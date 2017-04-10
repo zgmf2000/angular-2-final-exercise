@@ -1,0 +1,38 @@
+<header>
+  <h2>Add A New Task</h2>
+</header>
+<form
+  [formGroup]="form"
+  (ngSubmit)="onSubmit(form.value)">
+  <ul>
+    <li>
+      <label for="title">Name</label><br>
+      <input type="text" name="title" id="title" formControlName="title">
+      <div *ngIf="form.controls.title.errors?.required" class="error">
+        Name is required!
+      </div>
+    </li>
+    <li>
+      <label for="type">Medium</label><br>
+      <select name="type" id="type" formControlName="type">
+        <option *ngFor="let type of typeList.type" value="{{type}}">{{type}}</option>
+      </select>
+    </li>
+    <li>
+      <label for="date">Due Date</label><br>
+      <input type="date" name="date" id="date" formControlName="date">
+      <div *ngIf="form.controls.date.errors?.previousDate" class="error">
+        {{ form.controls.date.errors?.previousDate }}
+      </div>
+    </li>
+    <li>
+      <label for="desc">Description</label><br>
+      <textarea id="desc" name="desc" formControlName="desc" rows="7"></textarea>
+      <div *ngIf="form.controls.desc.errors?.exceedChar" class="error">
+        {{ form.controls.desc.errors?.exceedChar }}
+      </div>
+    </li>
+  </ul>
+  <button buttonHover type="submit" [disabled]="!form.valid">Save</button>
+  <button buttonHover class="return-home" (click)="backToHome()">Back</button>
+</form>

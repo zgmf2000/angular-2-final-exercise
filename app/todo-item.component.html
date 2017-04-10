@@ -1,0 +1,9 @@
+<h1>{{ TodoItem.title }}</h1>
+<p>Type: {{ TodoItem.type }}</p>
+<p *ngIf="TodoItem.date">Due on {{ TodoItem.date | date : 'shortDate'}}</p>
+<p>{{ TodoItem.desc }}</p>
+<p *ngIf="TodoItem.finished">{{ TodoItem.finished | taskFinished }}</p>
+<div class="button-container">
+  <button class="todo-set-done" [hidden]="setHidden()" buttonHover (click)="setDone()">Set Done</button>
+  <button class="todo-set-remove" buttonHover (click)="setRemove()">Remove</button>
+</div>

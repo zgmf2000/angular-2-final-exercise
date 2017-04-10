@@ -1,0 +1,16 @@
+.task-container
+{
+    display: block;
+    padding: 10px;
+    margin: 5px;
+}
+
+.item-task
+{
+    border: solid red 1px;
+}
+
+.item-shop
+{
+    border: solid green 1px;
+}

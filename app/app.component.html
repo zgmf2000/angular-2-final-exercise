@@ -1,0 +1,10 @@
+<section>
+  <header>
+    <div class="header-container">
+      <h1>To-Do List</h1>
+      <p class="description">Keeping track of tasks I want to do.</p>
+    </div>
+    <button *ngIf="checkNewPage()" id="add-new-task" buttonHover (click)="addNew()">Add New</button>
+  </header>
+  <router-outlet></router-outlet>
+</section>
