@@ -70,18 +70,19 @@ export class MockXHRBackend {
   }
 
   _deleteTodoItem(id) {
-    var target = this._todoList.find(todoItem => todoItem.id === id);
-    var index = this._todoList.indexOf(target);
+    let target = this._todoList.find(todoItem => todoItem.id === id);
+    let index = this._todoList.indexOf(target);
     if (index >= 0) {
       this._todoList.splice(index, 1);
     }
-    console.log(this._todoList);
   }
 
   _getNewId() {
     if (this._todoList.length > 0) {
       return Math.max.apply(Math, this._todoList.map(todo => todo.id)) + 1;
     }
+    else
+      return 1;
   }
 
   _todoList = [

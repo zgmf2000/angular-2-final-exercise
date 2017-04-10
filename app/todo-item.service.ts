@@ -9,10 +9,8 @@ export class TodoItemService {
   get(type) {
     let searchParams = new URLSearchParams();
     searchParams.append('type', type);
-    console.log(searchParams);
     return this.http.get('todolist', { search : searchParams })
       .map(response => {
-        console.log(response);
         return response.json().todoList;
       });
   }
@@ -29,7 +27,6 @@ export class TodoItemService {
   }
   
   delete(todoItem) {
-    console.log(todoItem.id);
     return this.http.delete(`todolist/${todoItem.id}`)
       .map(response => {});
   }
